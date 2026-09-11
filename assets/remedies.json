@@ -1,0 +1,57 @@
+{
+  "healthy": {
+    "displayName": "Healthy",
+    "cause": "No signs of disease detected.",
+    "fix": "Your plant looks good! Keep watering consistently at the soil line, give it 6-8 hours of sun, and check leaves weekly for early signs of trouble."
+  },
+  "early_blight": {
+    "displayName": "Early Blight",
+    "cause": "A fungus that thrives in warm, humid conditions and splashes up from the soil onto lower leaves.",
+    "fix": "Remove and discard affected leaves (don't compost them). Mulch around the base to stop soil splashing onto leaves. Spray a mix of 1 tbsp baking soda + 1 tsp liquid soap + 1 gallon water once a week."
+  },
+  "late_blight": {
+    "displayName": "Late Blight",
+    "cause": "A fast-spreading water mold favored by cool, wet weather - the same disease behind the Irish potato famine.",
+    "fix": "Remove and destroy infected leaves/plants immediately, this one spreads fast. Water at the soil, not the leaves, and space plants for airflow. A copper fungicide spray (garden-center staple) helps protect healthy growth."
+  },
+  "bacterial_spot": {
+    "displayName": "Bacterial Spot",
+    "cause": "Bacteria that spread through wet leaves, splashing water, and contaminated tools.",
+    "fix": "Remove affected leaves, avoid overhead watering, and disinfect pruning tools with rubbing alcohol between cuts. A weekly copper-based spray helps slow the spread."
+  },
+  "septoria_leaf_spot": {
+    "displayName": "Septoria Leaf Spot",
+    "cause": "A fungus that starts on lower, older leaves in warm, wet weather.",
+    "fix": "Prune off spotted lower leaves and improve airflow between plants. Mulch to stop soil splash. Weekly baking soda spray (1 tbsp baking soda + 1 tsp liquid soap + 1 gallon water) helps control mild cases."
+  },
+  "leaf_mold": {
+    "displayName": "Leaf Mold",
+    "cause": "A fungus that loves high humidity and poor air circulation, common in greenhouses or crowded plantings.",
+    "fix": "Space plants out and prune to increase airflow, water at the soil only, and remove moldy leaves. Spray with a baking-soda solution (1 tbsp baking soda + 1 tsp liquid soap + 1 gallon water) every few days until it clears."
+  },
+  "spider_mites": {
+    "displayName": "Spider Mites",
+    "cause": "Tiny pests that thrive in hot, dry conditions and suck fluid from leaves, leaving stippled/yellow spots and fine webbing.",
+    "fix": "Spray leaves (top and underside) forcefully with water every couple of days to knock mites off. Follow with a mix of 1 tsp mild dish soap + 1 quart water as a spray. Keep the plant well-watered, mites prefer stressed, dry plants."
+  },
+  "target_spot": {
+    "displayName": "Target Spot",
+    "cause": "A fungus that produces distinctive bullseye-ringed spots, favored by warm, humid, wet-leaf conditions.",
+    "fix": "Remove affected leaves and avoid wetting foliage when watering. Improve spacing/airflow. A weekly copper fungicide or baking-soda spray (1 tbsp baking soda + 1 tsp liquid soap + 1 gallon water) helps manage it."
+  },
+  "mosaic_virus": {
+    "displayName": "Mosaic Virus",
+    "cause": "A virus spread by handling plants (including smoking/tobacco residue on hands) and by insects like aphids. Not curable.",
+    "fix": "There's no cure, remove and discard (don't compost) infected plants to protect the rest. Wash hands and tools with soap after handling, and control aphids going forward."
+  },
+  "yellow_leaf_curl_virus": {
+    "displayName": "Yellow Leaf Curl Virus",
+    "cause": "A virus spread by whiteflies, causing yellowing, upward-curling leaves and stunted growth. Not curable.",
+    "fix": "Remove and discard infected plants to stop spread. Control whiteflies with a soapy water spray (1 tsp mild dish soap + 1 quart water) on leaf undersides, and use yellow sticky traps nearby."
+  },
+  "unknown": {
+    "displayName": "Unrecognized",
+    "cause": "This doesn't clearly match a condition the model knows about.",
+    "fix": "Try a clearer, well-lit close-up photo of the affected leaf. If symptoms persist, check with a local nursery or agricultural extension office."
+  }
+}
