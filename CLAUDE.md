@@ -13,8 +13,10 @@ phase (see Roadmap).
   (`healthy` vs `Early_bright`/Early Blight) because that's all the local
   training data ever covered. See "Retraining the model" below to upgrade it
   to the full 10-class tomato model.
-- **Phase 3/4 (full 10-class model) not started:** notebook not written yet,
-  no Colab run done yet.
+- **Phase 3 done, Phase 4 pending:** `notebooks/train_tomato_model.ipynb`
+  is ready to run on Colab. Nobody has run it yet, so `public/model/` is
+  still the small 2-class model - run the notebook and follow "Retraining
+  the model" below to finish Phase 4.
 
 ## Tech stack & key decisions
 
