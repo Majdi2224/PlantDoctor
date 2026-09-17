@@ -7,16 +7,19 @@ phase (see Roadmap).
 
 ## Status
 
-- **Phase 0-2 done:** camera capture, real on-device TF.js inference, and a
-  home-remedy lookup are wired up end-to-end and working.
-- **Model is still small-scope:** the bundled model only knows 2 classes
-  (`healthy` vs `Early_bright`/Early Blight) because that's all the local
-  training data ever covered. See "Retraining the model" below to upgrade it
-  to the full 10-class tomato model.
-- **Phase 3 done, Phase 4 pending:** `notebooks/train_tomato_model.ipynb`
-  is ready to run on Colab. Nobody has run it yet, so `public/model/` is
-  still the small 2-class model - run the notebook and follow "Retraining
-  the model" below to finish Phase 4.
+- **Phase 0-4 done:** camera capture, real on-device TF.js inference, and a
+  home-remedy lookup are wired up end-to-end and working. `public/model/`
+  now holds the full 10-class tomato model (healthy + 9 diseases), trained
+  via `notebooks/train_tomato_model_kaggle.ipynb` on Kaggle's free GPU and
+  converted to TF.js locally (see that notebook for why conversion happens
+  locally, not on Kaggle).
+- **Training notebooks:** `train_tomato_model_kaggle.ipynb` (Kaggle, the one
+  actually used) and `train_tomato_model.ipynb` (Colab, kept as a fallback,
+  same fixes applied but not run) both export an inference-only model with
+  no in-graph preprocessing/augmentation - `App.js` normalizes pixels to
+  `[-1, 1]` itself, so the exported model must take that already-normalized
+  input directly. If retraining, do not add a preprocessing layer back into
+  the exported model.
 
 ## Tech stack & key decisions
 
@@ -57,28 +60,39 @@ keyword.
 `late_blight`, `bacterial_spot`, `septoria_leaf_spot`, `leaf_mold`,
 `spider_mites`, `target_spot`, `mosaic_virus`, `yellow_leaf_curl_virus`,
 `healthy`, plus an `unknown` fallback), each with a plain-language `cause`
-and a `fix` written around common household/organic remedies (baking soda +
-water + soap sprays, pruning/airflow, etc.) rather than commercial
-pesticides. `remedies.js`'s `getRemedy(rawLabel)` normalizes whatever label
-string the model returns to one of these keys.
+and two remedy fields: `homeRemedy` (a real household/DIY recipe - baking
+soda + oil + soap sprays, insecticidal soap, pruning/airflow, sanitation)
+and `marketRemedy` (real commercial products by active ingredient - copper
+fungicide, chlorothalonil, neem oil, Bacillus subtilis biofungicides,
+systemic insecticides for virus vectors, etc.). Viral diseases
+(`mosaic_virus`, `yellow_leaf_curl_virus`) have no cure in either field by
+design - both are honest about that and focus on containment/vector control
+instead of implying a spray can cure a virus. `remedies.js`'s
+`getRemedy(rawLabel)` normalizes whatever label string the model returns to
+one of these keys.
 
 Run `node remedies.test.js` to sanity-check the label-matching logic after
 editing it.
 
 ## Retraining the model (full 10-class tomato model)
 
-The current model only knows 2 classes because `dataset/train/` on disk only
-ever had Early Blight images. To get the full 10-class model (matching
-`C:\Users\dell\Desktop\testing`'s healthy + 9-disease tomato set):
+Already done once (see Status above) via Kaggle + local conversion. To redo it (e.g. more epochs, a different base model, more data):
 
-1. Open `notebooks/train_tomato_model.ipynb` in Google Colab (**Runtime > Change runtime type > GPU** - training on a laptop CPU is impractical for this).
-2. Run all cells. It sparse-clones the `Tomato___*` classes from the public [PlantVillage dataset](https://github.com/spMohanty/PlantVillage-Dataset), fine-tunes a MobileNetV2 head, and converts the result to TF.js format.
-3. Download the notebook's output `model.json`, `weights.bin` (or sharded `group1-shard*.bin`), and `metadata.json`.
-4. Replace the files in `public/model/` with them.
-5. Run the app (`npm run web`) and spot-check a few images per class from `C:\Users\dell\Desktop\testing\` to sanity-check accuracy.
+1. Import `notebooks/train_tomato_model_kaggle.ipynb` into Kaggle (kaggle.com/code > New Notebook > File > Import Notebook). Enable **Settings > Accelerator > GPU T4 x2** - training on a laptop CPU/without a GPU is impractical for this.
+2. **Add Input** the `abdallahalidev/plantvillage-dataset` dataset (mirrors the public [PlantVillage dataset](https://github.com/spMohanty/PlantVillage-Dataset), pre-uploaded to Kaggle).
+3. Run all cells. It fine-tunes a MobileNetV2 head on the `Tomato___*` classes and saves a plain inference-only Keras model (no augmentation/preprocessing baked in - see the notebook's cell 7 comment for why) plus `metadata.json` to `/kaggle/working/`, zipped as `model_export.zip`.
+4. **Save Version > Save & Run All**, then download `model_export.zip` from the Output tab.
+5. Convert **locally** (not on Kaggle - its pre-installed `tensorflow`/`tf_keras`/`tensorflow_decision_forests` versions fight the `tensorflowjs` pip package no matter how it's installed there). From the unzipped folder in PowerShell:
+   ```powershell
+   python -m venv tfjs_env
+   tfjs_env\Scripts\activate
+   pip install tensorflowjs tf_keras
+   ```
+   Then run a small Python script that: sets `os.environ["TF_USE_LEGACY_KERAS"] = "1"` before importing TensorFlow (tensorflowjs's H5 converter only understands Keras 2's format, not the Keras 3 that recent TensorFlow bundles by default), loads `model.h5`, and calls `tensorflowjs.converters.save_keras_model(model, "tfjs_model")`. If the H5 file itself was written by Keras 3 and won't load under forced Keras 2 (an `Unrecognized keyword arguments: ['batch_shape']` error), extract the raw weights with plain Keras 3 (`model.get_weights()` -> `np.savez`), rebuild the identical architecture under `TF_USE_LEGACY_KERAS=1`, and `set_weights()` before saving - weights are version-agnostic even when the two Keras major versions can't read each other's model files.
+6. Copy `metadata.json` into the resulting `tfjs_model/` folder, then replace everything in `public/model/` with those files (`model.json`, `group1-shard*.bin`, `metadata.json`).
+7. Run the app (`npm run web`) and spot-check a few images per class from `C:\Users\dell\Desktop\testing\` to sanity-check accuracy.
 
 ## Roadmap
 
-- Full 10-class tomato model (Phase 3/4 above).
 - Other plant species.
 - Tree-disease detection (separate model/flow, later).
