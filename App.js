@@ -130,7 +130,8 @@ export default function App() {
             <Text style={styles.diagnosis}>Diagnosis: {remedy.displayName}</Text>
             <Text style={styles.confidence}>Confidence: {(predictions[0].probability * 100).toFixed(2)}%</Text>
             <Text style={styles.cause}>{remedy.cause}</Text>
-            <Text style={styles.advice}>💡 Fix: {remedy.fix}</Text>
+            <Text style={styles.advice}>🏡 Home remedy: {remedy.homeRemedy}</Text>
+            <Text style={styles.advice}>🛒 Market solution: {remedy.marketRemedy}</Text>
           </View>
         );
       })()}

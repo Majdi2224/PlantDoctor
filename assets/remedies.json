@@ -1,57 +1,68 @@
 {
   "healthy": {
     "displayName": "Healthy",
-    "cause": "No signs of disease detected.",
-    "fix": "Your plant looks good! Keep watering consistently at the soil line, give it 6-8 hours of sun, and check leaves weekly for early signs of trouble."
+    "cause": "No signs of disease detected in this photo.",
+    "homeRemedy": "Keep up consistent watering right at the soil line (1-2 inches per week), avoid wetting the leaves, and mulch around the base with straw or shredded leaves to stop soil from splashing onto foliage. Give the plant 6-8 hours of direct sun and space plants 24-36 inches apart for airflow. Check the underside of a few leaves weekly for early pests or spots.",
+    "marketRemedy": "No treatment needed. If growth looks slow, a balanced water-soluble fertilizer (e.g. 10-10-10 or a tomato-specific 18-18-21 blend) every 2-3 weeks during fruiting supports strong yields. A copper fungicide applied preventively every 7-10 days during long wet spells can help head off blight before it starts, especially if nearby plants have had disease before."
   },
   "early_blight": {
     "displayName": "Early Blight",
-    "cause": "A fungus that thrives in warm, humid conditions and splashes up from the soil onto lower leaves.",
-    "fix": "Remove and discard affected leaves (don't compost them). Mulch around the base to stop soil splashing onto leaves. Spray a mix of 1 tbsp baking soda + 1 tsp liquid soap + 1 gallon water once a week."
+    "cause": "A fungus (Alternaria solani) that overwinters in soil and old plant debris, splashing onto the lowest, oldest leaves first during warm, humid weather - look for concentric 'target-ring' brown spots with yellowing around them.",
+    "homeRemedy": "Remove and bag (don't compost) any spotted leaves as soon as you see them, and mulch heavily around the base so rain can't splash spores from soil onto leaves. Space and stake plants for airflow, and water only at the soil line in the morning. A weekly spray of 1 tbsp baking soda + 2.5 tbsp vegetable or horticultural oil + 1 tsp liquid soap (not detergent) per gallon of water can slow mild infections - test on a couple of leaves first since baking soda can scorch foliage in hot sun.",
+    "marketRemedy": "Look for a fungicide labeled for early blight with chlorothalonil, mancozeb, or copper (copper hydroxide/copper octanoate) as the active ingredient - e.g. Bonide Fung-onil (chlorothalonil) or Southern Ag Liquid Copper Fungicide - applied every 7-10 days starting at the first sign of spots. Rotate between two different active ingredients (e.g. copper one week, chlorothalonil the next) to avoid resistance, and always check the pre-harvest interval on the label before picking fruit."
   },
   "late_blight": {
     "displayName": "Late Blight",
-    "cause": "A fast-spreading water mold favored by cool, wet weather - the same disease behind the Irish potato famine.",
-    "fix": "Remove and destroy infected leaves/plants immediately, this one spreads fast. Water at the soil, not the leaves, and space plants for airflow. A copper fungicide spray (garden-center staple) helps protect healthy growth."
+    "cause": "A fast-moving water mold (Phytophthora infestans, the pathogen behind the Irish potato famine) that spreads explosively in cool, wet weather - greasy grey-green blotches on leaves that turn brown and papery within days, sometimes with white fuzzy growth underneath.",
+    "homeRemedy": "This one moves too fast for home remedies to keep up with once established - remove and destroy (bag, don't compost) infected leaves and whole plants immediately if it's spreading, since spores travel on wind and rain to neighboring plants and gardens. Water only at the soil line, never overhead, and increase spacing/staking for airflow. Prevention matters far more than treatment here.",
+    "marketRemedy": "Copper fungicide (copper hydroxide or copper octanoate, e.g. Bonide Copper Fungicide or Monterey Liqui-Cop) or chlorothalonil (e.g. Bonide Fung-onil) are the only products reliably available to home gardeners, and they only PREVENT new infection - they won't cure leaves already blighted. Start spraying every 5-7 days as soon as cool, wet weather sets in or late blight is reported in your area (check your local extension office's blight alerts), and remove infected material regardless of spraying."
   },
   "bacterial_spot": {
     "displayName": "Bacterial Spot",
-    "cause": "Bacteria that spread through wet leaves, splashing water, and contaminated tools.",
-    "fix": "Remove affected leaves, avoid overhead watering, and disinfect pruning tools with rubbing alcohol between cuts. A weekly copper-based spray helps slow the spread."
+    "cause": "Bacteria (Xanthomonas species) that enter through wounds and pores and spread via splashing water, wet tools, and handling wet plants - small, dark, greasy-looking spots with yellow halos on leaves and scabby spots on fruit.",
+    "homeRemedy": "Remove affected leaves and any fallen debris, and disinfect pruning shears/tools with rubbing alcohol or a 10% bleach solution between plants. Water at the soil only and avoid working with plants while they're wet. Home remedies like baking soda are far less effective against bacteria than against fungi, so don't rely on them alone here.",
+    "marketRemedy": "A copper-based bactericide (copper hydroxide, or copper hydroxide + mancozeb combo products) is the standard home-garden option - e.g. Bonide Copper Fungicide or Southern Ag Liquid Copper Fungicide - applied every 7-10 days starting at first symptoms, since copper suppresses spread rather than curing existing spots. Biofungicides containing Bacillus subtilis (e.g. Serenade Garden) can be alternated with copper for better control with less resistance risk. Disinfect tools and avoid overhead irrigation going forward, since copper resistance builds quickly if it's the only tool used."
   },
   "septoria_leaf_spot": {
     "displayName": "Septoria Leaf Spot",
-    "cause": "A fungus that starts on lower, older leaves in warm, wet weather.",
-    "fix": "Prune off spotted lower leaves and improve airflow between plants. Mulch to stop soil splash. Weekly baking soda spray (1 tbsp baking soda + 1 tsp liquid soap + 1 gallon water) helps control mild cases."
+    "cause": "A fungus (Septoria lycopersici) that survives in soil and plant debris over winter, starting on the lowest/oldest leaves as small circular spots with dark borders and tan centers, often dotted with tiny black specks.",
+    "homeRemedy": "Prune off spotted lower leaves as soon as they appear and clear fallen leaf debris from the soil surface. Mulch to block soil splash, and water at the base only. A weekly spray of 1 tbsp baking soda + 2.5 tbsp vegetable oil + 1 tsp liquid soap per gallon of water helps suppress mild cases - spot-test a leaf first since baking soda can scorch in strong sun.",
+    "marketRemedy": "Chlorothalonil or copper-based fungicides (e.g. Bonide Fung-onil or Southern Ag Liquid Copper Fungicide) are the standard home-garden treatment, applied every 7-10 days from first symptoms through the season since septoria keeps producing new spores on infected leaves all summer. At season's end, remove and destroy all plant debris (don't till it into soil) since the fungus overwinters there and reinfects next year's crop."
   },
   "leaf_mold": {
     "displayName": "Leaf Mold",
-    "cause": "A fungus that loves high humidity and poor air circulation, common in greenhouses or crowded plantings.",
-    "fix": "Space plants out and prune to increase airflow, water at the soil only, and remove moldy leaves. Spray with a baking-soda solution (1 tbsp baking soda + 1 tsp liquid soap + 1 gallon water) every few days until it clears."
+    "cause": "A fungus (Passalora fulva) that thrives in high humidity (above ~85%) and poor air circulation, most common in greenhouses, tunnels, or crowded plantings - pale yellow patches on the top of leaves with fuzzy olive-green to grey mold underneath.",
+    "homeRemedy": "Space plants further apart and prune lower/interior growth to open up airflow, ventilate greenhouses/tunnels aggressively, and switch to soil-line watering (drip or soaker hose) instead of overhead sprinklers. Remove affected leaves promptly. A baking soda spray (1 tbsp baking soda + 2.5 tbsp vegetable oil + 1 tsp liquid soap per gallon) every few days can help manage mild cases.",
+    "marketRemedy": "A copper fungicide or chlorothalonil spray (e.g. Bonide Copper Fungicide or Bonide Fung-onil) every 7-10 days helps once humidity can't be brought down on its own, particularly in greenhouse settings. Potassium bicarbonate fungicides (e.g. GreenCure, MilStop) are another effective, low-toxicity option for fungal leaf diseases like this one. If it recurs every season, look for leaf-mold-resistant tomato varieties (marked with 'Cf' resistance genes)."
   },
   "spider_mites": {
     "displayName": "Spider Mites",
-    "cause": "Tiny pests that thrive in hot, dry conditions and suck fluid from leaves, leaving stippled/yellow spots and fine webbing.",
-    "fix": "Spray leaves (top and underside) forcefully with water every couple of days to knock mites off. Follow with a mix of 1 tsp mild dish soap + 1 quart water as a spray. Keep the plant well-watered, mites prefer stressed, dry plants."
+    "cause": "Tiny sap-sucking pests (usually two-spotted spider mites) that thrive in hot, dry, dusty conditions - fine stippled/pale speckling on leaves, bronzing, and fine webbing on undersides and between leaves in heavier infestations.",
+    "homeRemedy": "Blast the tops and undersides of leaves forcefully with a strong stream of water every 2-3 days to physically knock mites and eggs off - this alone controls light infestations. Follow with a homemade insecticidal soap (1 tbsp mild liquid soap such as castile or Ivory - not detergent - per quart of water), spraying thoroughly including leaf undersides in early morning or evening. Keep the plant consistently watered, since drought-stressed plants attract and support far more mites.",
+    "marketRemedy": "Neem oil (e.g. Bonide Neem Oil, Garden Safe) or a ready-made insecticidal soap (e.g. Safer Brand Insecticidal Soap) applied every 5-7 days for 2-3 rounds breaks the egg-to-adult cycle - spray in the evening/cool part of the day since oils can scorch leaves in direct sun. For heavier infestations, a miticide containing spinosad (e.g. Monterey Garden Insect Spray) is effective and gentler on beneficial insects than broad-spectrum pesticides. Rotate between neem, soap, and spinosad rather than repeating one, since mites build resistance quickly."
   },
   "target_spot": {
     "displayName": "Target Spot",
-    "cause": "A fungus that produces distinctive bullseye-ringed spots, favored by warm, humid, wet-leaf conditions.",
-    "fix": "Remove affected leaves and avoid wetting foliage when watering. Improve spacing/airflow. A weekly copper fungicide or baking-soda spray (1 tbsp baking soda + 1 tsp liquid soap + 1 gallon water) helps manage it."
+    "cause": "A fungus (Corynespora cassiicola) that produces distinctive brown, concentric 'target' or bullseye-ringed spots, favored by warm, humid weather and wet foliage - easily confused with early blight and septoria, but the rings are usually larger and more defined.",
+    "homeRemedy": "Remove affected leaves promptly and avoid wetting foliage when watering - drip irrigation or watering at the base only makes a big difference. Improve airflow with wider spacing and by pruning lower branches. A weekly baking soda spray (1 tbsp baking soda + 2.5 tbsp vegetable oil + 1 tsp liquid soap per gallon of water) can help suppress mild, early cases.",
+    "marketRemedy": "Chlorothalonil or copper-based fungicides (e.g. Bonide Fung-onil or Southern Ag Liquid Copper Fungicide) applied every 7-10 days from first symptoms are the standard home-garden defense - the same spray program often used for early blight and septoria, since all three favor the same warm, humid, wet-leaf conditions. Clear and destroy plant debris at season's end since the fungus overwinters on it."
   },
   "mosaic_virus": {
     "displayName": "Mosaic Virus",
-    "cause": "A virus spread by handling plants (including smoking/tobacco residue on hands) and by insects like aphids. Not curable.",
-    "fix": "There's no cure, remove and discard (don't compost) infected plants to protect the rest. Wash hands and tools with soap after handling, and control aphids going forward."
+    "cause": "A virus (Tobacco Mosaic Virus or Tomato Mosaic Virus) causing mottled light/dark green patterns, curling, and stunted growth. It spreads through handling (including residue from tobacco products) and via insects like aphids. There is no cure once a plant is infected.",
+    "homeRemedy": "There's no home treatment that cures a virus - remove and destroy (don't compost) infected plants to protect the rest of the garden, since the virus persists in plant debris and even dried tobacco. Wash hands thoroughly with soap (not just water) and disinfect tools with a 10% bleach or rubbing-alcohol solution between plants, especially after touching infected foliage. Avoid smoking or handling tobacco products around plants, and control aphids going forward since they're a common vector.",
+    "marketRemedy": "No spray, fungicide, or pesticide cures a viral infection - anything marketed as a plant 'virus cure' isn't genuine. The real market-side action is prevention for next season: buy certified virus-free/resistant seed or transplants (look for 'ToMV' resistance on the seed packet), and use an insecticidal soap or neem oil to keep aphid populations down since they spread the virus between plants. Yellow sticky traps also help monitor and reduce aphid numbers."
   },
   "yellow_leaf_curl_virus": {
     "displayName": "Yellow Leaf Curl Virus",
-    "cause": "A virus spread by whiteflies, causing yellowing, upward-curling leaves and stunted growth. Not curable.",
-    "fix": "Remove and discard infected plants to stop spread. Control whiteflies with a soapy water spray (1 tsp mild dish soap + 1 quart water) on leaf undersides, and use yellow sticky traps nearby."
+    "cause": "Tomato Yellow Leaf Curl Virus (TYLCV), spread exclusively by the silverleaf/sweetpotato whitefly (Bemisia tabaci) - causes yellowing, upward leaf curling, and severely stunted growth with little to no fruit. Like other plant viruses, there is no cure once infected.",
+    "homeRemedy": "Remove and destroy infected plants promptly to cut off the source of virus for whiteflies to keep spreading - they can't be cured or nursed back. Use yellow sticky traps near plants to catch and monitor adult whiteflies, and check the undersides of leaves regularly (eggs/nymphs cluster there) so you catch an outbreak before it spreads. Reflective mulch (aluminum foil or silver plastic mulch around the base) has been shown to repel whiteflies from landing on plants in the first place.",
+    "marketRemedy": "Since there's no cure, market-side treatment targets the whitefly vector, not the virus itself: insecticidal soap or neem oil sprayed on leaf undersides every 5-7 days knocks back whitefly populations with low toxicity to beneficial insects. For heavier infestations, a systemic insecticide containing imidacloprid (soil-applied, labeled for tomato) protects new growth from whiteflies feeding on it. For future seasons, look for TYLCV-resistant tomato varieties (seed packets marked 'TYLCV resistant' or with 'Ty' resistance genes) - resistance is currently the single most effective tool against this disease."
   },
   "unknown": {
     "displayName": "Unrecognized",
-    "cause": "This doesn't clearly match a condition the model knows about.",
-    "fix": "Try a clearer, well-lit close-up photo of the affected leaf. If symptoms persist, check with a local nursery or agricultural extension office."
+    "cause": "This photo doesn't clearly match a condition the model was trained to recognize - it might be a different plant, a non-tomato issue, healthy foliage under unusual lighting, or a physical/environmental problem (sunscald, nutrient deficiency, herbicide drift) rather than a disease.",
+    "homeRemedy": "Try again with a clear, well-lit, close-up photo of a single affected leaf against a plain background, ideally showing both healthy and symptomatic tissue. If it keeps coming back unrecognized, look for patterns outside the model's 10 known classes: purple-tinged leaves often mean phosphorus deficiency or cold stress, and yellowing between leaf veins (while the veins stay green) usually points to a nutrient deficiency rather than disease.",
+    "marketRemedy": "No product should be applied blind. Take a photo (or the leaf itself) to a local nursery or your county/state agricultural extension office - most offer free or low-cost plant diagnostics and can identify problems a photo-based model can't, including soil-borne issues, nutrient deficiencies, and pests too small to show up clearly in a photo."
   }
 }
