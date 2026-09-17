@@ -103,12 +103,19 @@ Already done once (see Status above) via Kaggle + local conversion. To redo it (
 
 ## Roadmap
 
-- **In progress:** multi-species expansion (apple, cherry, peach) - see
-  `docs/multi-species-expansion/PLAN.md` for feasibility notes and status.
-  `notebooks/train_multi_species_model_kaggle.ipynb` is ready to run; the
+- **In progress:** Lebanon orchard expansion - tomato, apple, cherry, peach,
+  grape, olive, banana, citrus, and fig (35 classes, 9 species) - see
+  `docs/multi-species-expansion/PLAN.md` for the full research trail
+  (verified dataset sources, rejected/superseded options, known gaps like
+  apricot having no usable dataset yet).
+  `notebooks/train_lebanon_orchard_model_kaggle.ipynb` is ready to run
+  (combines PlantVillage with 4 additional verified Kaggle datasets); the
   remedies data/matching (`assets/remedies.json`, `remedies.js`) is already
-  updated for it. `public/model/` still holds the 10-class tomato-only model
-  until that notebook is actually run and converted.
-- Other plant species beyond tomato/apple/cherry/peach.
-- Tree-disease detection for species not in PlantVillage (separate
-  model/flow, later).
+  updated for all 35 classes. `public/model/` still holds the 10-class
+  tomato-only model until that notebook is actually run and converted.
+  `notebooks/train_multi_species_model_kaggle.ipynb` (tomato+apple+cherry+peach
+  only, PlantVillage-only) is a smaller intermediate fallback if the
+  4-extra-dataset version runs into trouble.
+- Apricot (no usable dataset found yet - see PLAN.md).
+- Tree-disease detection for species not covered by any of the above
+  (separate model/flow, later).

@@ -28,6 +28,31 @@ assert.notStrictEqual(
   'peach and tomato bacterial spot must not resolve to the same remedy'
 );
 
+// Lebanon orchard expansion: grape/olive/banana/citrus/fig, using the exact
+// canonical folder names the multi-source notebook materializes.
+assert.strictEqual(getRemedy('Grape___healthy').displayName, 'Healthy');
+assert.strictEqual(getRemedy('Grape___Black_rot').displayName, 'Black Rot');
+assert.strictEqual(getRemedy('Grape___Esca_(Black_Measles)').displayName, 'Esca (Black Measles)');
+assert.strictEqual(getRemedy('Grape___Leaf_blight_(Isariopsis_Leaf_Spot)').displayName, 'Leaf Blight (Isariopsis Leaf Spot)');
+assert.strictEqual(getRemedy('Olive___healthy').displayName, 'Healthy');
+assert.strictEqual(getRemedy('Olive___peacock_spot').displayName, 'Peacock Spot');
+assert.strictEqual(getRemedy('Olive___bud_mite').displayName, 'Bud Mite');
+assert.strictEqual(getRemedy('Banana___healthy').displayName, 'Healthy');
+assert.strictEqual(getRemedy('Banana___sigatoka').displayName, 'Sigatoka Leaf Spot');
+assert.strictEqual(getRemedy('Citrus___healthy').displayName, 'Healthy');
+assert.strictEqual(getRemedy('Citrus___canker').displayName, 'Citrus Canker');
+assert.strictEqual(getRemedy('Citrus___black_spot').displayName, 'Citrus Black Spot');
+assert.strictEqual(getRemedy('Citrus___greening').displayName, 'Citrus Greening (HLB)');
+assert.strictEqual(getRemedy('Fig___healthy').displayName, 'Healthy');
+assert.strictEqual(getRemedy('Fig___infected').displayName, 'Leaf Infection (Unspecified)');
+// "healthy" is the classic cross-species collision - every species must
+// resolve to ITS OWN healthy entry, not tomato's or each other's.
+const healthySpecies = ['Tomato', 'Apple', 'Cherry', 'Peach', 'Grape', 'Olive', 'Banana', 'Citrus', 'Fig'];
+const healthyCauses = new Set(healthySpecies.map((s) => getRemedy(`${s}___healthy`).cause));
+assert.strictEqual(healthyCauses.size, 1, 'all "healthy" entries share the same generic cause text by design');
+const healthyHomeRemedies = new Set(healthySpecies.map((s) => getRemedy(`${s}___healthy`).homeRemedy));
+assert.strictEqual(healthyHomeRemedies.size, healthySpecies.length, 'each species\' healthy homeRemedy must be distinct, not a shared/generic tip');
+
 for (const [key, entry] of Object.entries(allRemedies)) {
   assert.ok(entry.homeRemedy && entry.homeRemedy.length > 20, `${key} missing a real homeRemedy`);
   assert.ok(entry.marketRemedy && entry.marketRemedy.length > 20, `${key} missing a real marketRemedy`);

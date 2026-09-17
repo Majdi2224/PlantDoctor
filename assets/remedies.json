@@ -107,6 +107,108 @@
     "homeRemedy": "Avoid high-nitrogen fertilizer, which encourages the soft, susceptible new growth bacteria prefer, and prune to improve airflow so leaves dry faster after rain. Rake up fallen, infected leaves - there's no effective home/organic spray once the tree is actively growing, so sanitation and correctly-timed copper (below) matter more here than for most other diseases.",
     "marketRemedy": "Timing matters more than product choice here: a copper-based bactericide (e.g. Bonide Copper Fungicide, Southern Ag Liquid Copper Fungicide) should be applied at leaf-fall in autumn and again in early spring before buds swell (the dormant season) - copper applied during the growing season, directly on leaves or fruit, commonly causes russeting/scarring on peach. There is no effective in-season rescue treatment for home growers; management is almost entirely about correctly-timed dormant sprays plus resistant varieties for new plantings."
   },
+  "grape_healthy": {
+    "displayName": "Healthy",
+    "cause": "No signs of disease detected in this photo.",
+    "homeRemedy": "Keep the canopy pruned and trained (trellised) for airflow and sun exposure, and keep the ground under the vine clear of fallen leaves and mummified fruit through the season, since most grape diseases overwinter there. Water at the root zone, not overhead.",
+    "marketRemedy": "No treatment needed. If black rot or esca has appeared on this vine or nearby vines before, a preventive copper or mancozeb spray from bud break through about 4 weeks after bloom is the standard home-vineyard schedule."
+  },
+  "grape_black_rot": {
+    "displayName": "Black Rot",
+    "cause": "A fungus (Guignardia bidwellii) that overwinters in mummified fruit and infected canes - reddish-brown circular leaf spots, and fruit that shrivels into hard black 'mummies' still hanging on the vine.",
+    "homeRemedy": "Remove and destroy mummified fruit, diseased tendrils, and prunings from both the vine and the ground - this is the single biggest lever, since next year's infections come almost entirely from mummies left behind. Keep the canopy open and weed-free for faster drying after rain.",
+    "marketRemedy": "Captan, copper, or mancozeb fungicides (mancozeb is often the preferred home-garden protectant here) applied from bud break through about 4 weeks after bloom - the critical infection window - give the best control. Once berries mature past that window they're largely resistant, so early-season spraying matters far more than late-season."
+  },
+  "grape_esca": {
+    "displayName": "Esca (Black Measles)",
+    "cause": "A complex of wood-rotting fungi that infect through pruning wounds and slowly colonize the trunk and cordons over years - tell-tale 'tiger-stripe' interveinal yellow/red streaking on leaves, and dark spotted, dried-looking berries. There is no cure once a vine's trunk is infected.",
+    "homeRemedy": "There's no home treatment that reverses esca - it's a trunk disease, not a leaf-surface fungus a spray can reach. Prune during dry weather only (infection spreads through wet pruning wounds), and consider 'double pruning' or delaying final pruning cuts until later in dormancy when the vine is less susceptible. Severely declining vines are usually best removed and replaced rather than nursed along.",
+    "marketRemedy": "No fungicide cures esca - sprays target leaf/fruit fungi, not the internal trunk rot. Wound-sealant/pruning-paste products applied immediately after pruning can reduce new infections entering through fresh cuts, which is the main preventable entry point. For a badly declining vine, trunk renewal (cutting back hard to healthy wood and retraining a new trunk) is the closest thing to a fix."
+  },
+  "grape_leaf_blight": {
+    "displayName": "Leaf Blight (Isariopsis Leaf Spot)",
+    "cause": "A fungus (Pseudocercospora vitis / Isariopsis) causing angular brown spots on leaves that can merge and cause early defoliation in warm, humid weather.",
+    "homeRemedy": "Remove and destroy fallen leaves and prunings at season's end, since the fungus overwinters there. Improve canopy airflow through pruning and training, and avoid overhead watering.",
+    "marketRemedy": "The same copper or mancozeb spray program used for black rot (bud break through several weeks post-bloom) generally controls this too, since home vineyards typically manage all the common grape leaf fungi on one combined schedule rather than spraying for each separately."
+  },
+  "olive_healthy": {
+    "displayName": "Healthy",
+    "cause": "No signs of disease detected in this photo.",
+    "homeRemedy": "Prune to keep the canopy open for airflow and sunlight (olive fungal diseases thrive in shaded, humid canopies), and clear fallen leaves from around the base. Water deeply but infrequently - olives are drought-tolerant and overwatering encourages root and fungal problems.",
+    "marketRemedy": "No treatment needed. If peacock spot has been an issue on this tree before, a preventive copper spray in late autumn before winter rains (repeated in spring if wet weather continues) is the standard preventive step for home olive growers."
+  },
+  "olive_peacock_spot": {
+    "displayName": "Peacock Spot",
+    "cause": "A fungus (Venturia oleaginea / Spilocaea oleagina) causing distinctive dark, concentric-ringed 'peacock feather' spots on the upper leaf surface, favored by mild, wet winters and shaded, poorly-ventilated canopies.",
+    "homeRemedy": "Prune to open up the canopy - this fungus thrives in shaded, still air more than almost any other factor. Rake and remove fallen leaves, since they carry the fungus into the next wet season.",
+    "marketRemedy": "Fixed copper fungicide (e.g. Bonide Copper Fungicide) is the standard and most reliable treatment - apply preventively in late October/autumn before winter rains begin, and again in spring if wet weather persists, for about 4 sprays a year spaced 10-14 days apart. Copper only protects healthy leaves going forward; it won't remove existing spots."
+  },
+  "olive_bud_mite": {
+    "displayName": "Bud Mite",
+    "cause": "A microscopic mite (Aculus olearius) that feeds on buds, leaves, and developing fruit, causing distorted growth, silvery/bronzed leaf discoloration, and occasionally reduced fruit set.",
+    "homeRemedy": "This pest rarely causes serious tree damage or a meaningful harvest loss even at noticeable infestation levels, so for a home tree, monitoring rather than aggressive treatment is often enough. Pruning out heavily distorted growth and keeping the tree otherwise healthy (proper watering, not over-fertilizing with nitrogen) helps it outgrow mild infestations.",
+    "marketRemedy": "Wettable sulfur is the standard treatment if several consecutive years of noticeably reduced harvest make treatment worthwhile - applied in early spring as buds begin to swell. Since bud mites usually aren't damaging enough to justify spraying every year, treat based on actual harvest impact rather than on a fixed schedule."
+  },
+  "banana_healthy": {
+    "displayName": "Healthy",
+    "cause": "No signs of disease detected in this photo.",
+    "homeRemedy": "Remove old, dead, or dying leaves regularly (they're a major source of fungal spores for the diseases below) and keep plants spaced for airflow. Water at the base and avoid wetting leaves late in the day.",
+    "marketRemedy": "No treatment needed. If Sigatoka has been a recurring problem in your area, a preventive copper or neem oil spray during the wet season can help keep new leaves ahead of infection."
+  },
+  "banana_sigatoka": {
+    "displayName": "Sigatoka Leaf Spot",
+    "cause": "A fungus (Mycosphaerella/Pseudocercospora species) causing streaked, then spreading brown/black spots on leaves that merge and can kill large sections of leaf tissue in warm, humid, wet conditions - one of the most damaging banana diseases worldwide.",
+    "homeRemedy": "Remove and destroy heavily spotted or dead leaves regularly to reduce the spore source (this alone meaningfully slows spread in a home planting), and space/prune surrounding vegetation to improve airflow and sun penetration around the plant.",
+    "marketRemedy": "Contact fungicides (mancozeb or chlorothalonil) applied preventively during wet/humid periods, or a systemic fungicide (propiconazole or tebuconazole) for better curative action once spots appear, are the standard options. Neem oil (1-2 tbsp per liter of water) is a lower-toxicity option for light infections. Rotate between different fungicide classes if spraying repeatedly, since Sigatoka fungi are known to develop resistance quickly to any single product used alone."
+  },
+  "banana_cordana": {
+    "displayName": "Cordana Leaf Spot",
+    "cause": "A fungus (Cordana musae) causing oval, pale-centered spots with a yellow halo, usually less aggressive than Sigatoka but still capable of merging into larger blighted patches on stressed plants.",
+    "homeRemedy": "Remove affected leaves promptly and keep the planting well-spaced for airflow. This disease is usually a secondary/opportunistic problem on already-stressed plants, so consistent watering and nutrition go a long way toward prevention.",
+    "marketRemedy": "Copper oxychloride or mancozeb sprays in more severe cases are the standard treatment, applied to new growth every 2-3 weeks until symptoms subside. Milder cases often resolve once the underlying plant stress (usually drought or nutrient deficiency) is corrected."
+  },
+  "banana_pestalotiopsis": {
+    "displayName": "Pestalotiopsis Leaf Spot",
+    "cause": "A fungus (Pestalotiopsis species) that typically enters through leaf-tip wounds or damage, causing grey-brown spots with a darker border, often starting at leaf edges/tips.",
+    "homeRemedy": "Trim and destroy damaged or spotted leaf tissue (this fungus often follows physical wind/tear damage, so reducing wind exposure or providing a windbreak helps prevent entry points). Keep plants well-watered and fertilized, since this is largely an opportunistic fungus on stressed tissue.",
+    "marketRemedy": "Copper-based fungicides applied to new growth control most cases; treatment is rarely needed beyond removing damaged leaf tissue unless the planting is under ongoing wind/mechanical stress that keeps creating new entry wounds."
+  },
+  "citrus_healthy": {
+    "displayName": "Healthy",
+    "cause": "No signs of disease detected in this photo.",
+    "homeRemedy": "Water deeply at the root zone and avoid wetting foliage. Prune out dead/crossing branches for airflow, and check new flush growth regularly for the tiny whitefly-like Asian citrus psyllid, the insect that spreads citrus greening - catching it early matters far more for citrus than for most other trees, since greening has no cure once a tree is infected.",
+    "marketRemedy": "No treatment needed. A balanced citrus-specific fertilizer in early spring and again in early summer supports strong flush growth. If canker or black spot has occurred on this tree before, a preventive copper spray at each new leaf flush is the standard home-grower schedule."
+  },
+  "citrus_canker": {
+    "displayName": "Citrus Canker",
+    "cause": "Bacteria (Xanthomonas citri) that enter through wind-driven rain, wounds, and leaf miner damage - raised, corky, scab-like lesions with a yellow halo on leaves, stems, and fruit.",
+    "homeRemedy": "Prune and destroy visibly infected shoots and leaves during dry weather (wet-weather pruning spreads the bacteria on tools and hands), and disinfect tools with a bleach or alcohol solution between cuts. A windbreak (hedge or fence) reduces wind-driven rain spread, one of the main ways canker moves between trees.",
+    "marketRemedy": "Copper-based bactericides (e.g. Bonide Copper Fungicide) applied at each new leaf flush, roughly every 3 weeks through the growing season, are the standard control - copper prevents new infections but won't cure existing lesions. There is no cure for a badly infected tree; in severe, spreading cases removal is sometimes the only option to protect nearby citrus."
+  },
+  "citrus_black_spot": {
+    "displayName": "Citrus Black Spot",
+    "cause": "A fungus (Phyllosticta citricarpa) that overwinters in fallen leaf litter and infects fruit and leaves during warm, wet weather - small, dark, freckle-like spots on fruit rind and leaves.",
+    "homeRemedy": "Rake up and destroy fallen leaves regularly, especially through fall and winter - like apple scab, this fungus survives specifically in leaf litter on the ground and reinfects the tree from there each spring. Prune for airflow to speed leaf-drying after rain.",
+    "marketRemedy": "Copper fungicide sprayed every 3-4 weeks from the first spring flush through harvest is the standard home-garden control, since this disease is preventive-only - it protects new growth and fruit but won't remove existing spots."
+  },
+  "citrus_greening": {
+    "displayName": "Citrus Greening (HLB)",
+    "cause": "Huanglongbing (HLB), a bacterial disease (Candidatus Liberibacter) spread by the Asian citrus psyllid - causes blotchy yellow mottling, stunted and bitter/misshapen fruit, and progressive tree decline. There is currently no cure once a tree is infected.",
+    "homeRemedy": "There's no home treatment that cures HLB. The most effective home-garden action is removing and destroying an infected tree promptly, since it becomes a continual source of bacteria for psyllids to spread to every other citrus tree nearby. Inspect new growth regularly for the Asian citrus psyllid (a small, tilted-when-feeding insect) on any remaining or new citrus trees.",
+    "marketRemedy": "No product cures HLB - be skeptical of anything marketed as a citrus greening 'cure.' Market-side action targets the psyllid vector instead: insecticidal soap or neem oil on new flush growth, or a systemic soil-drench insecticide (imidacloprid, labeled for citrus) for heavier psyllid pressure. For replanting, buy only certified disease-free nursery stock - HLB also spreads through infected planting material."
+  },
+  "fig_healthy": {
+    "displayName": "Healthy",
+    "cause": "No signs of disease detected in this photo.",
+    "homeRemedy": "Water deeply and consistently, especially during fruit development (irregular watering causes fruit-drop and splitting more often than disease does), and keep fallen leaves and fruit cleared from the base. Prune in winter dormancy to maintain airflow.",
+    "marketRemedy": "No treatment needed. Figs are generally low-disease trees when well-watered and not overcrowded - most issues that do appear are more often environmental (irregular watering, poor drainage) than pathogenic."
+  },
+  "fig_infected": {
+    "displayName": "Leaf Infection (Unspecified)",
+    "cause": "This photo shows signs of infection, but figs are affected by several distinct diseases (fig rust, fig leaf spot/Cercospora, fig mosaic virus) that can look similar in early stages - this model flags 'infected' generally without distinguishing which one.",
+    "homeRemedy": "Remove and destroy affected leaves, and clear fallen leaf litter from the base - most fig fungal diseases overwinter there regardless of which specific one it is. Improve airflow through pruning and avoid wetting foliage when watering.",
+    "marketRemedy": "A general copper fungicide is a reasonable first step for most fungal fig leaf problems and is safe to try while you get a firmer diagnosis. Since the specific disease isn't identified here, take a clear photo (or the leaf itself) to a local nursery or agricultural extension office if it spreads or doesn't respond - fig mosaic virus in particular has no chemical treatment and needs a different response (remove the plant) than a fungal spot would."
+  },
   "unknown": {
     "displayName": "Unrecognized",
     "cause": "This photo doesn't clearly match a condition the model was trained to recognize - it might be a different plant, a non-tomato issue, healthy foliage under unusual lighting, or a physical/environmental problem (sunscald, nutrient deficiency, herbicide drift) rather than a disease.",

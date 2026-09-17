@@ -37,6 +37,35 @@ const SPECIES_KEYWORDS = {
     ['healthy', 'peach_healthy'],
     ['bacterial', 'peach_bacterial_spot'],
   ],
+  grape: [
+    ['healthy', 'grape_healthy'],
+    ['black_rot', 'grape_black_rot'],
+    ['esca', 'grape_esca'],
+    ['blight', 'grape_leaf_blight'],
+  ],
+  olive: [
+    ['healthy', 'olive_healthy'],
+    ['peacock', 'olive_peacock_spot'],
+    ['mite', 'olive_bud_mite'],
+    ['aculus', 'olive_bud_mite'],
+  ],
+  banana: [
+    ['healthy', 'banana_healthy'],
+    ['sigatoka', 'banana_sigatoka'],
+    ['cordana', 'banana_cordana'],
+    ['pestalotiopsis', 'banana_pestalotiopsis'],
+  ],
+  citrus: [
+    ['healthy', 'citrus_healthy'],
+    ['canker', 'citrus_canker'],
+    ['black_spot', 'citrus_black_spot'],
+    ['blackspot', 'citrus_black_spot'],
+    ['greening', 'citrus_greening'],
+  ],
+  fig: [
+    ['healthy', 'fig_healthy'],
+    ['infected', 'fig_infected'],
+  ],
 };
 
 // Order matters only in that longer/more-specific names should be checked
