@@ -1,68 +1,116 @@
 {
-  "healthy": {
+  "tomato_healthy": {
     "displayName": "Healthy",
     "cause": "No signs of disease detected in this photo.",
     "homeRemedy": "Keep up consistent watering right at the soil line (1-2 inches per week), avoid wetting the leaves, and mulch around the base with straw or shredded leaves to stop soil from splashing onto foliage. Give the plant 6-8 hours of direct sun and space plants 24-36 inches apart for airflow. Check the underside of a few leaves weekly for early pests or spots.",
     "marketRemedy": "No treatment needed. If growth looks slow, a balanced water-soluble fertilizer (e.g. 10-10-10 or a tomato-specific 18-18-21 blend) every 2-3 weeks during fruiting supports strong yields. A copper fungicide applied preventively every 7-10 days during long wet spells can help head off blight before it starts, especially if nearby plants have had disease before."
   },
-  "early_blight": {
+  "tomato_early_blight": {
     "displayName": "Early Blight",
     "cause": "A fungus (Alternaria solani) that overwinters in soil and old plant debris, splashing onto the lowest, oldest leaves first during warm, humid weather - look for concentric 'target-ring' brown spots with yellowing around them.",
     "homeRemedy": "Remove and bag (don't compost) any spotted leaves as soon as you see them, and mulch heavily around the base so rain can't splash spores from soil onto leaves. Space and stake plants for airflow, and water only at the soil line in the morning. A weekly spray of 1 tbsp baking soda + 2.5 tbsp vegetable or horticultural oil + 1 tsp liquid soap (not detergent) per gallon of water can slow mild infections - test on a couple of leaves first since baking soda can scorch foliage in hot sun.",
     "marketRemedy": "Look for a fungicide labeled for early blight with chlorothalonil, mancozeb, or copper (copper hydroxide/copper octanoate) as the active ingredient - e.g. Bonide Fung-onil (chlorothalonil) or Southern Ag Liquid Copper Fungicide - applied every 7-10 days starting at the first sign of spots. Rotate between two different active ingredients (e.g. copper one week, chlorothalonil the next) to avoid resistance, and always check the pre-harvest interval on the label before picking fruit."
   },
-  "late_blight": {
+  "tomato_late_blight": {
     "displayName": "Late Blight",
     "cause": "A fast-moving water mold (Phytophthora infestans, the pathogen behind the Irish potato famine) that spreads explosively in cool, wet weather - greasy grey-green blotches on leaves that turn brown and papery within days, sometimes with white fuzzy growth underneath.",
     "homeRemedy": "This one moves too fast for home remedies to keep up with once established - remove and destroy (bag, don't compost) infected leaves and whole plants immediately if it's spreading, since spores travel on wind and rain to neighboring plants and gardens. Water only at the soil line, never overhead, and increase spacing/staking for airflow. Prevention matters far more than treatment here.",
     "marketRemedy": "Copper fungicide (copper hydroxide or copper octanoate, e.g. Bonide Copper Fungicide or Monterey Liqui-Cop) or chlorothalonil (e.g. Bonide Fung-onil) are the only products reliably available to home gardeners, and they only PREVENT new infection - they won't cure leaves already blighted. Start spraying every 5-7 days as soon as cool, wet weather sets in or late blight is reported in your area (check your local extension office's blight alerts), and remove infected material regardless of spraying."
   },
-  "bacterial_spot": {
+  "tomato_bacterial_spot": {
     "displayName": "Bacterial Spot",
     "cause": "Bacteria (Xanthomonas species) that enter through wounds and pores and spread via splashing water, wet tools, and handling wet plants - small, dark, greasy-looking spots with yellow halos on leaves and scabby spots on fruit.",
     "homeRemedy": "Remove affected leaves and any fallen debris, and disinfect pruning shears/tools with rubbing alcohol or a 10% bleach solution between plants. Water at the soil only and avoid working with plants while they're wet. Home remedies like baking soda are far less effective against bacteria than against fungi, so don't rely on them alone here.",
     "marketRemedy": "A copper-based bactericide (copper hydroxide, or copper hydroxide + mancozeb combo products) is the standard home-garden option - e.g. Bonide Copper Fungicide or Southern Ag Liquid Copper Fungicide - applied every 7-10 days starting at first symptoms, since copper suppresses spread rather than curing existing spots. Biofungicides containing Bacillus subtilis (e.g. Serenade Garden) can be alternated with copper for better control with less resistance risk. Disinfect tools and avoid overhead irrigation going forward, since copper resistance builds quickly if it's the only tool used."
   },
-  "septoria_leaf_spot": {
+  "tomato_septoria_leaf_spot": {
     "displayName": "Septoria Leaf Spot",
     "cause": "A fungus (Septoria lycopersici) that survives in soil and plant debris over winter, starting on the lowest/oldest leaves as small circular spots with dark borders and tan centers, often dotted with tiny black specks.",
     "homeRemedy": "Prune off spotted lower leaves as soon as they appear and clear fallen leaf debris from the soil surface. Mulch to block soil splash, and water at the base only. A weekly spray of 1 tbsp baking soda + 2.5 tbsp vegetable oil + 1 tsp liquid soap per gallon of water helps suppress mild cases - spot-test a leaf first since baking soda can scorch in strong sun.",
     "marketRemedy": "Chlorothalonil or copper-based fungicides (e.g. Bonide Fung-onil or Southern Ag Liquid Copper Fungicide) are the standard home-garden treatment, applied every 7-10 days from first symptoms through the season since septoria keeps producing new spores on infected leaves all summer. At season's end, remove and destroy all plant debris (don't till it into soil) since the fungus overwinters there and reinfects next year's crop."
   },
-  "leaf_mold": {
+  "tomato_leaf_mold": {
     "displayName": "Leaf Mold",
     "cause": "A fungus (Passalora fulva) that thrives in high humidity (above ~85%) and poor air circulation, most common in greenhouses, tunnels, or crowded plantings - pale yellow patches on the top of leaves with fuzzy olive-green to grey mold underneath.",
     "homeRemedy": "Space plants further apart and prune lower/interior growth to open up airflow, ventilate greenhouses/tunnels aggressively, and switch to soil-line watering (drip or soaker hose) instead of overhead sprinklers. Remove affected leaves promptly. A baking soda spray (1 tbsp baking soda + 2.5 tbsp vegetable oil + 1 tsp liquid soap per gallon) every few days can help manage mild cases.",
     "marketRemedy": "A copper fungicide or chlorothalonil spray (e.g. Bonide Copper Fungicide or Bonide Fung-onil) every 7-10 days helps once humidity can't be brought down on its own, particularly in greenhouse settings. Potassium bicarbonate fungicides (e.g. GreenCure, MilStop) are another effective, low-toxicity option for fungal leaf diseases like this one. If it recurs every season, look for leaf-mold-resistant tomato varieties (marked with 'Cf' resistance genes)."
   },
-  "spider_mites": {
+  "tomato_spider_mites": {
     "displayName": "Spider Mites",
     "cause": "Tiny sap-sucking pests (usually two-spotted spider mites) that thrive in hot, dry, dusty conditions - fine stippled/pale speckling on leaves, bronzing, and fine webbing on undersides and between leaves in heavier infestations.",
     "homeRemedy": "Blast the tops and undersides of leaves forcefully with a strong stream of water every 2-3 days to physically knock mites and eggs off - this alone controls light infestations. Follow with a homemade insecticidal soap (1 tbsp mild liquid soap such as castile or Ivory - not detergent - per quart of water), spraying thoroughly including leaf undersides in early morning or evening. Keep the plant consistently watered, since drought-stressed plants attract and support far more mites.",
     "marketRemedy": "Neem oil (e.g. Bonide Neem Oil, Garden Safe) or a ready-made insecticidal soap (e.g. Safer Brand Insecticidal Soap) applied every 5-7 days for 2-3 rounds breaks the egg-to-adult cycle - spray in the evening/cool part of the day since oils can scorch leaves in direct sun. For heavier infestations, a miticide containing spinosad (e.g. Monterey Garden Insect Spray) is effective and gentler on beneficial insects than broad-spectrum pesticides. Rotate between neem, soap, and spinosad rather than repeating one, since mites build resistance quickly."
   },
-  "target_spot": {
+  "tomato_target_spot": {
     "displayName": "Target Spot",
     "cause": "A fungus (Corynespora cassiicola) that produces distinctive brown, concentric 'target' or bullseye-ringed spots, favored by warm, humid weather and wet foliage - easily confused with early blight and septoria, but the rings are usually larger and more defined.",
     "homeRemedy": "Remove affected leaves promptly and avoid wetting foliage when watering - drip irrigation or watering at the base only makes a big difference. Improve airflow with wider spacing and by pruning lower branches. A weekly baking soda spray (1 tbsp baking soda + 2.5 tbsp vegetable oil + 1 tsp liquid soap per gallon of water) can help suppress mild, early cases.",
     "marketRemedy": "Chlorothalonil or copper-based fungicides (e.g. Bonide Fung-onil or Southern Ag Liquid Copper Fungicide) applied every 7-10 days from first symptoms are the standard home-garden defense - the same spray program often used for early blight and septoria, since all three favor the same warm, humid, wet-leaf conditions. Clear and destroy plant debris at season's end since the fungus overwinters on it."
   },
-  "mosaic_virus": {
+  "tomato_mosaic_virus": {
     "displayName": "Mosaic Virus",
     "cause": "A virus (Tobacco Mosaic Virus or Tomato Mosaic Virus) causing mottled light/dark green patterns, curling, and stunted growth. It spreads through handling (including residue from tobacco products) and via insects like aphids. There is no cure once a plant is infected.",
     "homeRemedy": "There's no home treatment that cures a virus - remove and destroy (don't compost) infected plants to protect the rest of the garden, since the virus persists in plant debris and even dried tobacco. Wash hands thoroughly with soap (not just water) and disinfect tools with a 10% bleach or rubbing-alcohol solution between plants, especially after touching infected foliage. Avoid smoking or handling tobacco products around plants, and control aphids going forward since they're a common vector.",
     "marketRemedy": "No spray, fungicide, or pesticide cures a viral infection - anything marketed as a plant 'virus cure' isn't genuine. The real market-side action is prevention for next season: buy certified virus-free/resistant seed or transplants (look for 'ToMV' resistance on the seed packet), and use an insecticidal soap or neem oil to keep aphid populations down since they spread the virus between plants. Yellow sticky traps also help monitor and reduce aphid numbers."
   },
-  "yellow_leaf_curl_virus": {
+  "tomato_yellow_leaf_curl_virus": {
     "displayName": "Yellow Leaf Curl Virus",
     "cause": "Tomato Yellow Leaf Curl Virus (TYLCV), spread exclusively by the silverleaf/sweetpotato whitefly (Bemisia tabaci) - causes yellowing, upward leaf curling, and severely stunted growth with little to no fruit. Like other plant viruses, there is no cure once infected.",
     "homeRemedy": "Remove and destroy infected plants promptly to cut off the source of virus for whiteflies to keep spreading - they can't be cured or nursed back. Use yellow sticky traps near plants to catch and monitor adult whiteflies, and check the undersides of leaves regularly (eggs/nymphs cluster there) so you catch an outbreak before it spreads. Reflective mulch (aluminum foil or silver plastic mulch around the base) has been shown to repel whiteflies from landing on plants in the first place.",
     "marketRemedy": "Since there's no cure, market-side treatment targets the whitefly vector, not the virus itself: insecticidal soap or neem oil sprayed on leaf undersides every 5-7 days knocks back whitefly populations with low toxicity to beneficial insects. For heavier infestations, a systemic insecticide containing imidacloprid (soil-applied, labeled for tomato) protects new growth from whiteflies feeding on it. For future seasons, look for TYLCV-resistant tomato varieties (seed packets marked 'TYLCV resistant' or with 'Ty' resistance genes) - resistance is currently the single most effective tool against this disease."
   },
+  "apple_healthy": {
+    "displayName": "Healthy",
+    "cause": "No signs of disease detected in this photo.",
+    "homeRemedy": "Keep the area under the canopy raked clear of fallen leaves and fruit through the growing season and especially in fall, since most apple diseases overwinter in that debris. Prune every winter (while dormant) to open up the center of the tree for airflow and sunlight, and water deeply but infrequently at the root zone rather than on the leaves.",
+    "marketRemedy": "No treatment needed. A dormant-season copper spray in late winter (before buds break) is a cheap, standard preventive step for home orchards, especially if scab or rust has shown up on this tree or nearby apple/crabapple/cedar trees before. A balanced fruit-tree fertilizer in early spring supports healthy new growth."
+  },
+  "apple_scab": {
+    "displayName": "Apple Scab",
+    "cause": "A fungus (Venturia inaequalis) that overwinters in fallen leaves and infects new leaves and fruit in cool, wet spring weather - olive-green to dark brown velvety spots on leaves, and corky, scabby lesions on fruit.",
+    "homeRemedy": "Rake up and destroy (bag or burn, don't compost) all fallen leaves in autumn - this is the single most effective non-chemical step, since the fungus overwinters and releases spores from that leaf litter the following spring. Prune to open the canopy for airflow and faster leaf-drying after rain or dew.",
+    "marketRemedy": "Myclobutanil (e.g. Spectracide Immunox, Fertilome F-Stop) is the most effective home-garden fungicide for scab, alongside captan or wettable sulfur as organic-leaning options. Spray on a 7-10 day schedule starting at green tip (as buds first open) through several weeks of wet spring weather, since scab is a preventive-only target - once spots appear on a leaf, that leaf can't be un-infected, but spraying protects the rest of the tree's new growth."
+  },
+  "apple_black_rot": {
+    "displayName": "Black Rot",
+    "cause": "A fungus (Botryosphaeria obtusa) that infects through wounds, dead wood, and old cankers - purple-bordered brown leaf spots ('frog-eye leaf spot'), plus rotting fruit and sunken cankers on branches.",
+    "homeRemedy": "Prune out dead, cankered, or diseased wood during dry weather (fungal spores spread easily in wet conditions) and destroy the prunings - cankers are the main source of new infection each year. Remove mummified fruit left on the tree or ground, since it also harbors the fungus over winter.",
+    "marketRemedy": "Captan or myclobutanil-based fungicides, applied on the same schedule used for apple scab (they're often managed together with one combined spray program), help protect fruit and new growth. Because black rot mainly spreads from cankers and dead wood, sanitation (pruning + removing mummies) matters more here than spraying alone - a well-sprayed tree with cankers left in place will keep reinfecting itself."
+  },
+  "apple_cedar_apple_rust": {
+    "displayName": "Cedar Apple Rust",
+    "cause": "A fungus (Gymnosporangium juniperi-virginianae) with a two-host life cycle that alternates between apple/crabapple trees and Eastern red cedar or juniper trees - bright orange-yellow spots on leaves, sometimes with small tube-like structures on the leaf underside.",
+    "homeRemedy": "If practical, remove Eastern red cedar or juniper trees within a few hundred feet, since the fungus can't complete its life cycle on apple alone and needs a nearby cedar/juniper host - though spores can travel over a mile, so this only helps with junipers on your own property. Rake and destroy fallen leaves in autumn, and choose rust-resistant apple varieties for new plantings.",
+    "marketRemedy": "Myclobutanil (e.g. Spectracide Immunox) is the most effective home-garden fungicide for cedar apple rust - copper and sulfur give only partial control, and captan doesn't work well against rust at all, so myclobutanil is worth prioritizing here specifically. Apply starting at pink bud (just before bloom) and continue every 7-10 days through early summer while orange telial horns are visible on nearby junipers."
+  },
+  "cherry_healthy": {
+    "displayName": "Healthy",
+    "cause": "No signs of disease detected in this photo.",
+    "homeRemedy": "Prune in summer rather than winter for cherries specifically (reduces the risk of certain canker diseases entering through pruning wounds), and keep the canopy open for airflow. Water deeply at the root zone and avoid wetting foliage, especially late in the day.",
+    "marketRemedy": "No treatment needed. If powdery mildew has been an issue on this tree in past seasons, a preventive sulfur or potassium bicarbonate spray at the first sign of new, tender growth in spring can head it off before it starts."
+  },
+  "cherry_powdery_mildew": {
+    "displayName": "Powdery Mildew",
+    "cause": "A fungus (Podosphaera clandestina) that thrives in warm days, cool nights, and shaded/crowded conditions - a white to grey powdery coating on leaves and shoot tips, especially new growth, without necessarily needing wet leaves to spread (unlike most other fungal diseases).",
+    "homeRemedy": "Prune to open up the canopy and increase airflow and light penetration, and avoid excess nitrogen fertilizer, which pushes exactly the soft, tender new growth this fungus prefers. A milk spray (1 part milk to 2-3 parts water, sprayed weekly on new growth) has real research support as a mild fungicide for powdery mildew, as does a baking soda spray (1 tbsp baking soda + 2.5 tbsp vegetable oil + 1 tsp liquid soap per gallon of water).",
+    "marketRemedy": "Wettable sulfur (applied every 7-10 days) is the standard home-orchard treatment, or potassium bicarbonate products (e.g. Monterey Bi-Carb, GreenCure) as a gentler organic option that also kills existing mildew rather than only preventing new infection. Never apply sulfur within about 2-3 weeks of an oil spray (dormant or horticultural oil) - the combination can burn foliage."
+  },
+  "peach_healthy": {
+    "displayName": "Healthy",
+    "cause": "No signs of disease detected in this photo.",
+    "homeRemedy": "Prune annually in late winter/early spring to maintain an open center for airflow and sunlight, and clean up fallen leaves and fruit through the season. Water deeply at the root zone, especially during fruit development, and avoid wetting the leaves or trunk.",
+    "marketRemedy": "No treatment needed. A dormant copper spray at leaf-fall in autumn (not during the growing season, since copper can scar/russet peach fruit and foliage if applied later) is the standard preventive step for stone fruit orchards, especially if bacterial spot has appeared on this tree before."
+  },
+  "peach_bacterial_spot": {
+    "displayName": "Bacterial Spot",
+    "cause": "Bacteria (Xanthomonas arboricola pv. pruni) that overwinter in bark cracks and bud scales and spread via wind-driven rain - small, dark, angular spots on leaves that often fall out leaving a 'shot-hole' look, plus sunken, pitted spots on fruit.",
+    "homeRemedy": "Avoid high-nitrogen fertilizer, which encourages the soft, susceptible new growth bacteria prefer, and prune to improve airflow so leaves dry faster after rain. Rake up fallen, infected leaves - there's no effective home/organic spray once the tree is actively growing, so sanitation and correctly-timed copper (below) matter more here than for most other diseases.",
+    "marketRemedy": "Timing matters more than product choice here: a copper-based bactericide (e.g. Bonide Copper Fungicide, Southern Ag Liquid Copper Fungicide) should be applied at leaf-fall in autumn and again in early spring before buds swell (the dormant season) - copper applied during the growing season, directly on leaves or fruit, commonly causes russeting/scarring on peach. There is no effective in-season rescue treatment for home growers; management is almost entirely about correctly-timed dormant sprays plus resistant varieties for new plantings."
+  },
   "unknown": {
     "displayName": "Unrecognized",
     "cause": "This photo doesn't clearly match a condition the model was trained to recognize - it might be a different plant, a non-tomato issue, healthy foliage under unusual lighting, or a physical/environmental problem (sunscald, nutrient deficiency, herbicide drift) rather than a disease.",
-    "homeRemedy": "Try again with a clear, well-lit, close-up photo of a single affected leaf against a plain background, ideally showing both healthy and symptomatic tissue. If it keeps coming back unrecognized, look for patterns outside the model's 10 known classes: purple-tinged leaves often mean phosphorus deficiency or cold stress, and yellowing between leaf veins (while the veins stay green) usually points to a nutrient deficiency rather than disease.",
+    "homeRemedy": "Try again with a clear, well-lit, close-up photo of a single affected leaf against a plain background, ideally showing both healthy and symptomatic tissue. If it keeps coming back unrecognized, look for patterns outside the model's known classes: purple-tinged leaves often mean phosphorus deficiency or cold stress, and yellowing between leaf veins (while the veins stay green) usually points to a nutrient deficiency rather than disease.",
     "marketRemedy": "No product should be applied blind. Take a photo (or the leaf itself) to a local nursery or your county/state agricultural extension office - most offer free or low-cost plant diagnostics and can identify problems a photo-based model can't, including soil-borne issues, nutrient deficiencies, and pests too small to show up clearly in a photo."
   }
 }

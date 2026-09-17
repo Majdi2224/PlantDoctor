@@ -56,20 +56,29 @@ keyword.
 
 ## Remedy data
 
-`assets/remedies.json` - one entry per canonical disease key (`early_blight`,
-`late_blight`, `bacterial_spot`, `septoria_leaf_spot`, `leaf_mold`,
-`spider_mites`, `target_spot`, `mosaic_virus`, `yellow_leaf_curl_virus`,
-`healthy`, plus an `unknown` fallback), each with a plain-language `cause`
-and two remedy fields: `homeRemedy` (a real household/DIY recipe - baking
-soda + oil + soap sprays, insecticidal soap, pruning/airflow, sanitation)
-and `marketRemedy` (real commercial products by active ingredient - copper
-fungicide, chlorothalonil, neem oil, Bacillus subtilis biofungicides,
+`assets/remedies.json` - one entry per species-prefixed disease key
+(`tomato_early_blight`, `apple_scab`, `cherry_powdery_mildew`,
+`peach_bacterial_spot`, etc. - see the file for the full list, plus an
+`unknown` fallback), each with a plain-language `cause` and two remedy
+fields: `homeRemedy` (a real household/DIY recipe - baking soda + oil + soap
+sprays, insecticidal soap, pruning/airflow, sanitation) and `marketRemedy`
+(real commercial products by active ingredient - copper fungicide,
+chlorothalonil, myclobutanil, neem oil, Bacillus subtilis biofungicides,
 systemic insecticides for virus vectors, etc.). Viral diseases
-(`mosaic_virus`, `yellow_leaf_curl_virus`) have no cure in either field by
-design - both are honest about that and focus on containment/vector control
-instead of implying a spray can cure a virus. `remedies.js`'s
-`getRemedy(rawLabel)` normalizes whatever label string the model returns to
-one of these keys.
+(`tomato_mosaic_virus`, `tomato_yellow_leaf_curl_virus`) have no cure in
+either field by design - both are honest about that and focus on
+containment/vector control instead of implying a spray can cure a virus.
+
+Keys are species-prefixed (not just `bacterial_spot`) because disease names
+collide across species with different remedies - Peach also has a
+`Bacterial_spot` class, and every species has its own `healthy` class with
+different care advice. `remedies.js`'s `getRemedy(rawLabel)` parses the
+label's `Species___Disease` structure (PlantVillage's convention, which our
+own `metadata.json` labels always follow) and matches against a
+per-species keyword table, so the same disease name resolves to the correct
+species' entry. Labels with no species prefix (legacy Teachable Machine
+labels like `Early_bright`) fall back to the tomato table, since those older
+models were tomato-only.
 
 Run `node remedies.test.js` to sanity-check the label-matching logic after
 editing it.
@@ -94,5 +103,12 @@ Already done once (see Status above) via Kaggle + local conversion. To redo it (
 
 ## Roadmap
 
-- Other plant species.
-- Tree-disease detection (separate model/flow, later).
+- **In progress:** multi-species expansion (apple, cherry, peach) - see
+  `docs/multi-species-expansion/PLAN.md` for feasibility notes and status.
+  `notebooks/train_multi_species_model_kaggle.ipynb` is ready to run; the
+  remedies data/matching (`assets/remedies.json`, `remedies.js`) is already
+  updated for it. `public/model/` still holds the 10-class tomato-only model
+  until that notebook is actually run and converted.
+- Other plant species beyond tomato/apple/cherry/peach.
+- Tree-disease detection for species not in PlantVillage (separate
+  model/flow, later).
