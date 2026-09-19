@@ -92,16 +92,17 @@ side.
       (including a same-cause-text check that would catch a copy-pasted "healthy" entry).
 - [x] Created `notebooks/train_lebanon_orchard_model_kaggle.ipynb` (35 classes, 5 combined
       dataset sources).
-- [ ] **Run the notebook on Kaggle** - requires adding all 5 datasets and the owner's GPU
-      session; will take noticeably longer than the tomato-only run (~65-70k combined images).
-- [ ] Convert the downloaded `model.h5` locally with the existing `model_export/` scripts
-      (they already read the class count from `metadata.json`, so no manual edit needed there).
-- [ ] Install into `public/model/`, and specifically check **per-class** accuracy (the notebook's
-      evaluation cell prints this) rather than only the blended overall number - the four
-      non-PlantVillage sources have far fewer images per class than tomato's ~1,800/class
-      average, and Fig's "infected" class is only a generic binary label, so uneven per-species
-      accuracy is expected, not necessarily a bug.
-- [ ] Update `CLAUDE.md` status once the 35-class model is actually deployed.
+- [x] **Run the notebook on Kaggle** (`majdizeinedeen/multi-species-model-disease`, completed
+      2026-09-18) - 36,831 combined images across 35 classes.
+- [x] Convert the downloaded `model.h5` locally and install into `public/model/`.
+- [x] Checked **per-class** accuracy via the notebook's own held-out validation split (20%,
+      seed=123, never seen during training - no leakage): 96.0% overall. As expected, the
+      smaller non-PlantVillage sources lag: `Citrus___black_spot` 0.71 (31 val images),
+      `Citrus___healthy` 0.79 (14 val images), `Citrus___canker` 0.80 (30 val images),
+      `Banana___pestalotiopsis` 0.86 (29 val images). One PlantVillage class also came in low -
+      `Tomato___Early_blight` 0.73 (198 val images) - worth another look since it has a normal
+      sample size, unlike the small-dataset species above. Everything else is 0.91-1.00.
+- [x] Update `CLAUDE.md` status now that the 35-class model is deployed.
 
 ## Known gaps / honest limitations
 

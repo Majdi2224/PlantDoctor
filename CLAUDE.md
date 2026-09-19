@@ -8,11 +8,19 @@ phase (see Roadmap).
 ## Status
 
 - **Phase 0-4 done:** camera capture, real on-device TF.js inference, and a
-  home-remedy lookup are wired up end-to-end and working. `public/model/`
-  now holds the full 10-class tomato model (healthy + 9 diseases), trained
-  via `notebooks/train_tomato_model_kaggle.ipynb` on Kaggle's free GPU and
-  converted to TF.js locally (see that notebook for why conversion happens
-  locally, not on Kaggle).
+  home-remedy lookup are wired up end-to-end and working.
+- **35-class Lebanon orchard model is live:** `public/model/` now holds the
+  9-species model (tomato, apple, cherry, peach, grape, olive, banana,
+  citrus, fig - 35 classes) trained via
+  `notebooks/train_lebanon_orchard_model_kaggle.ipynb` on Kaggle's free GPU
+  and converted to TF.js locally. Held-out validation accuracy (TF's own
+  20% split, seed=123, never seen during training): 96.0% overall.
+  Weakest classes - `Tomato___Early_blight` 0.73 (198 val images, a real
+  gap worth another look), `Citrus___black_spot` 0.71 (31 val images),
+  `Citrus___healthy` 0.79 (14 val images), `Citrus___canker` 0.80 (30 val
+  images), `Banana___pestalotiopsis` 0.86 (29 val images) - all expected
+  given their smaller source datasets (see
+  `docs/multi-species-expansion/PLAN.md`), everything else 0.91-1.00.
 - **Training notebooks:** `train_tomato_model_kaggle.ipynb` (Kaggle, the one
   actually used) and `train_tomato_model.ipynb` (Colab, kept as a fallback,
   same fixes applied but not run) both export an inference-only model with
@@ -83,11 +91,16 @@ models were tomato-only.
 Run `node remedies.test.js` to sanity-check the label-matching logic after
 editing it.
 
-## Retraining the model (full 10-class tomato model)
+## Retraining the model
 
-Already done once (see Status above) via Kaggle + local conversion. To redo it (e.g. more epochs, a different base model, more data):
+Currently deployed model is the 35-class Lebanon orchard model, trained via
+`notebooks/train_lebanon_orchard_model_kaggle.ipynb` (see Status above). The
+steps below were written for the earlier 10-class tomato-only notebook
+(`notebooks/train_tomato_model_kaggle.ipynb`) but the Kaggle-run +
+local-conversion mechanics are identical for either notebook - swap the
+notebook name and its "Add Input" datasets accordingly.
 
-1. Import `notebooks/train_tomato_model_kaggle.ipynb` into Kaggle (kaggle.com/code > New Notebook > File > Import Notebook). Enable **Settings > Accelerator > GPU T4 x2** - training on a laptop CPU/without a GPU is impractical for this.
+1. Import the notebook into Kaggle (kaggle.com/code > New Notebook > File > Import Notebook). Enable **Settings > Accelerator > GPU T4 x2** - training on a laptop CPU/without a GPU is impractical for this.
 2. **Add Input** the `abdallahalidev/plantvillage-dataset` dataset (mirrors the public [PlantVillage dataset](https://github.com/spMohanty/PlantVillage-Dataset), pre-uploaded to Kaggle).
 3. Run all cells. It fine-tunes a MobileNetV2 head on the `Tomato___*` classes and saves a plain inference-only Keras model (no augmentation/preprocessing baked in - see the notebook's cell 7 comment for why) plus `metadata.json` to `/kaggle/working/`, zipped as `model_export.zip`.
 4. **Save Version > Save & Run All**, then download `model_export.zip` from the Output tab.
@@ -99,23 +112,20 @@ Already done once (see Status above) via Kaggle + local conversion. To redo it (
    ```
    Then run a small Python script that: sets `os.environ["TF_USE_LEGACY_KERAS"] = "1"` before importing TensorFlow (tensorflowjs's H5 converter only understands Keras 2's format, not the Keras 3 that recent TensorFlow bundles by default), loads `model.h5`, and calls `tensorflowjs.converters.save_keras_model(model, "tfjs_model")`. If the H5 file itself was written by Keras 3 and won't load under forced Keras 2 (an `Unrecognized keyword arguments: ['batch_shape']` error), extract the raw weights with plain Keras 3 (`model.get_weights()` -> `np.savez`), rebuild the identical architecture under `TF_USE_LEGACY_KERAS=1`, and `set_weights()` before saving - weights are version-agnostic even when the two Keras major versions can't read each other's model files.
 6. Copy `metadata.json` into the resulting `tfjs_model/` folder, then replace everything in `public/model/` with those files (`model.json`, `group1-shard*.bin`, `metadata.json`).
-7. Run the app (`npm run web`) and spot-check a few images per class from `C:\Users\dell\Desktop\testing\` to sanity-check accuracy.
+7. Run the app (`npm run web`) and spot-check a few images per class against real photos, or check the Kaggle kernel's own held-out validation accuracy (`kaggle kernels output <ref>` then grep its log for "val images)" - that's TF's own 20%-split, seed-123 accuracy per class, never seen during training) to sanity-check accuracy. There's no longer a local `testing/` folder of sample images (deleted for space) - use the Kaggle validation numbers or freshly sourced photos instead.
 
 ## Roadmap
 
-- **In progress:** Lebanon orchard expansion - tomato, apple, cherry, peach,
-  grape, olive, banana, citrus, and fig (35 classes, 9 species) - see
+- **Done:** Lebanon orchard expansion - tomato, apple, cherry, peach, grape,
+  olive, banana, citrus, and fig (35 classes, 9 species), trained via
+  `notebooks/train_lebanon_orchard_model_kaggle.ipynb` and deployed to
+  `public/model/` (see Status above). See
   `docs/multi-species-expansion/PLAN.md` for the full research trail
   (verified dataset sources, rejected/superseded options, known gaps like
   apricot having no usable dataset yet).
-  `notebooks/train_lebanon_orchard_model_kaggle.ipynb` is ready to run
-  (combines PlantVillage with 4 additional verified Kaggle datasets); the
-  remedies data/matching (`assets/remedies.json`, `remedies.js`) is already
-  updated for all 35 classes. `public/model/` still holds the 10-class
-  tomato-only model until that notebook is actually run and converted.
   `notebooks/train_multi_species_model_kaggle.ipynb` (tomato+apple+cherry+peach
-  only, PlantVillage-only) is a smaller intermediate fallback if the
-  4-extra-dataset version runs into trouble.
+  only, PlantVillage-only) remains as a smaller intermediate fallback if the
+  35-class model ever needs debugging in isolation.
 - Apricot (no usable dataset found yet - see PLAN.md).
 - Tree-disease detection for species not covered by any of the above
   (separate model/flow, later).
