@@ -18,6 +18,31 @@ function loadImageElement(uri) {
   });
 }
 
+// expo-image-picker's web shim only resolves when the file input's
+// 'change' event fires; dismissing the camera/gallery dialog without
+// picking anything fires no event at all, so the picker promise (and our
+// "Analyzing..." spinner) would hang forever. Browsers do refocus the
+// window when that dialog closes either way, so race the real result
+// against that refocus to detect a cancel.
+function withCancelFallback(pickerPromise) {
+  return new Promise((resolve) => {
+    let settled = false;
+    const finish = (result) => {
+      if (settled) return;
+      settled = true;
+      window.removeEventListener('focus', onFocus);
+      resolve(result);
+    };
+    pickerPromise.then(finish);
+    const onFocus = () => {
+      // A real pick's 'change' event fires just before focus returns, so
+      // give it a moment to win the race before assuming a cancel.
+      setTimeout(() => finish({ canceled: true, assets: null }), 500);
+    };
+    window.addEventListener('focus', onFocus);
+  });
+}
+
 async function classifyImage(model, labels, uri) {
   const imgElement = await loadImageElement(uri);
   const inputTensor = tf.tidy(() =>
@@ -99,21 +124,17 @@ export default function App() {
 
   const takePicture = async () => {
     setIsLoading(true);
-    const result = await ImagePicker.launchCameraAsync({
-      allowsEditing: true,
-      aspect: [1, 1],
-      quality: 1,
-    });
+    const result = await withCancelFallback(
+      ImagePicker.launchCameraAsync({ allowsEditing: true, aspect: [1, 1], quality: 1 })
+    );
     await handlePickerResult(result);
   };
 
   const pickFromGallery = async () => {
     setIsLoading(true);
-    const result = await ImagePicker.launchImageLibraryAsync({
-      allowsEditing: true,
-      aspect: [1, 1],
-      quality: 1,
-    });
+    const result = await withCancelFallback(
+      ImagePicker.launchImageLibraryAsync({ allowsEditing: true, aspect: [1, 1], quality: 1 })
+    );
     await handlePickerResult(result);
   };
 
