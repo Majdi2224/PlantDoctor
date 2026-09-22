@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, Button, Image, ActivityIndicator } from 'react-native';
+import { StyleSheet, Text, View, Button, Image, ActivityIndicator, ScrollView } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import * as tf from '@tensorflow/tfjs';
 import { getRemedy } from './remedies';
@@ -65,6 +65,9 @@ export default function App() {
           tf.loadLayersModel('/model/model.json'),
           fetch('/model/metadata.json').then((res) => res.json()),
         ]);
+        // Warm up the GPU shaders now, on the loading screen, so the first
+        // real photo doesn't stall while WebGL compiles them.
+        tf.tidy(() => loadedModel.predict(tf.zeros([1, MODEL_INPUT_SIZE, MODEL_INPUT_SIZE, 3])));
         setModel(loadedModel);
         setLabels(metadata.labels);
       } catch (err) {
@@ -74,14 +77,7 @@ export default function App() {
     })();
   }, []);
 
-  const takePicture = async () => {
-    setIsLoading(true);
-    let result = await ImagePicker.launchCameraAsync({
-      allowsEditing: true,
-      aspect: [1, 1],
-      quality: 1,
-    });
-
+  const handlePickerResult = async (result) => {
     if (result.canceled) {
       setIsLoading(false);
       return;
@@ -101,16 +97,51 @@ export default function App() {
     }
   };
 
+  const takePicture = async () => {
+    setIsLoading(true);
+    const result = await ImagePicker.launchCameraAsync({
+      allowsEditing: true,
+      aspect: [1, 1],
+      quality: 1,
+    });
+    await handlePickerResult(result);
+  };
+
+  const pickFromGallery = async () => {
+    setIsLoading(true);
+    const result = await ImagePicker.launchImageLibraryAsync({
+      allowsEditing: true,
+      aspect: [1, 1],
+      quality: 1,
+    });
+    await handlePickerResult(result);
+  };
+
+  const reset = () => {
+    setImage(null);
+    setPredictions(null);
+    setModelError(null);
+  };
+
   return (
-    <View style={styles.container}>
+    <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.title}>🌿 PlantDoctor</Text>
       <Text style={styles.subtitle}>Take a picture to diagnose plant diseases</Text>
-      
-      <Button
-        title={model ? '📷 Take Plant Photo' : 'Loading model...'}
-        onPress={takePicture}
-        disabled={isLoading || !model}
-      />
+
+      {!image && (
+        <View style={styles.buttonRow}>
+          <Button
+            title={model ? '📷 Take Plant Photo' : 'Loading model...'}
+            onPress={takePicture}
+            disabled={isLoading || !model}
+          />
+          <Button
+            title={model ? '🖼️ Choose from Gallery' : 'Loading model...'}
+            onPress={pickFromGallery}
+            disabled={isLoading || !model}
+          />
+        </View>
+      )}
 
       {modelError && <Text style={styles.error}>{modelError}</Text>}
 
@@ -136,20 +167,31 @@ export default function App() {
         );
       })()}
 
-      {!image && !isLoading && model && (
-        <Text style={styles.instruction}>Click the button above to start diagnosis</Text>
+      {image && !isLoading && (
+        <View style={styles.buttonRow}>
+          <Button title="🔄 Try Another Photo" onPress={reset} />
+        </View>
       )}
-    </View>
+
+      {!image && !isLoading && model && (
+        <Text style={styles.instruction}>Click a button above to start diagnosis</Text>
+      )}
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flexGrow: 1,
     backgroundColor: '#f0fff0',
     alignItems: 'center',
-    justifyContent: 'center',
     padding: 20,
+    paddingTop: 60,
+    paddingBottom: 60,
+  },
+  buttonRow: {
+    gap: 10,
+    marginTop: 10,
   },
   title: {
     fontSize: 28,
